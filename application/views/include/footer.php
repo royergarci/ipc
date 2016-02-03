@@ -4,7 +4,7 @@
 					<h3 class="col-title"> Contactanos </h3><span class="liner"></span>
 
 					<div class="widget-content">
-						<p>Contacta al diputado Isidro Pedroza Chavez. Solo con tu ayuda podemos mejorar Hidalgo. Oficina</p>
+						<p>Contacta al diputado Isidro Pedraza Chavez. Solo con tu ayuda podemos mejorar Hidalgo. Oficina</p>
 
 						<i class="icon-map-marker mi"></i><strong>Dirección:</strong> Vicente Villada #230 Col. Neza <hr>
 						<i class="icon-phone mi"></i><strong>Telefono:</strong> 5434-3910 <hr>

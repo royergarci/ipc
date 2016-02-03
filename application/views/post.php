@@ -24,72 +24,47 @@
 		<!-- inicia Contenido -->
 		<div class="page-content">
         
-	        <?php include('include/matrix2.php'); ?>
-			<!-- End Revolution Slider -->
-        	
+	        <!-- breadcrums -->
+	        <div class="breadcrumb-place">
+				<div class="row clearfix">
+					<h3 class="page-title"> Noticias </h3>
+					<div class="breadcrumbIn">
+						<span> Tu estas aquí </span>
+						<ul>
+							<li><a href="index.html" title="Homepage"> <i class="icon-home"></i> </a></li>
+							<li><a href="blog-right-sidebar.html" title="Blog"> Noticias </a></li>
+							
+						</ul>
+					</div><!-- breadcrumbIn -->
+				</div><!-- row -->
+			</div>
+	        <!-- termina breadcums -->
+        	<br>
+        	<br>
 			<div class="row clearfix mbs">
 
-				<div class="grid_8 posts s-thumbnails">
-					<h3 class="col-title"> Ultimas noticias </h3>
-					<br>
+				<div class="grid_8 posts">
+					<div class="post">
+						<div class="thumb-big"><img src="<?php echo $post->path_image; ?>" alt="#"></div>
+						<div class="meta-box">
+						
+							<h3> <?php echo $post->titulo; ?></h3>
+							<div class="meta-more">
+								<span><i class="icon-user"></i> <a href="#"><?php echo $post->autor; ?></a></span>
+								<span><i class="icon-time"></i> <a href="#"><?php echo $post->fecha_str; ?></a></span>
+							</div><!-- meta more -->
+						</div><!-- meta box -->
+						<p><?php echo $post->texto; ?></p>
+						
+						<div class="share-post mb mtf clearfix">
+							<div class="btn-share">
+								<div class="fb-share-button" data-href="<?php echo base_url().$_SERVER['REQUEST_URI']; ?>" data-layout="button_count"></div>
+							</div>
+							<div class="btn-share"><a href="<?php echo base_url().$_SERVER['REQUEST_URI']; ?>" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+						</div><!-- close share post -->
+					</div><!-- end post image -->
 
-				
-					<?php 
-					foreach ($posts as $post) {
-						if (!in_array("video", $post->categorias)){
-							echo $post->objectId;
-						?>
-							<div class="post clearfix">
-								<a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>" class="thumb-small fll"><img src="<?php echo $post->path_image; ?>" alt="#"></a>
-								<div class="content-two-third">
-									<div class="meta-box">
-										<h3> <a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>"><?php echo $post->titulo; ?></a> </h3>
-										<div class="meta-more">
-											<span><i class="icon-user"></i> <a href="#"><?php echo $post->autor; ?></a></span>
-											<span><i class="icon-time"></i> <a href="#"><?php echo $post->fecha_str; ?></a></span>
-											
-										</div><!-- meta more -->
-									</div><!-- meta box -->
-									<p><?php echo substr($post->texto,0,150).'[...]'; ?></p>
-								<a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>" class="tbutton small"><span>Leer Mas<i class="mii icon-angle-right"></i></span></a>
-								</div><!-- content two third -->
-							</div><!-- post image -->
-					<?php 
-						}
-						else{
-					?>
-					<div class="post clearfix">
-						<div class="iframe-thumb fll"><iframe src="<?php echo $post->video_path;?>" width="100%" height="150"></iframe></div>
-						<div class="content-two-third">
-							<div class="meta-box">
-								<h3> <a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>"><?php echo $post->titulo; ?></a> </h3>
-								<div class="meta-more">
-									<span><i class="icon-user"></i> <a href="#"><?php echo $post->autor; ?></a></span>
-									<span><i class="icon-time"></i> <a href="#"><?php echo $post->fecha_str; ?></a></span>
-								</div><!-- meta more -->
-							</div><!-- meta box -->
-							<p><?php echo substr($post->texto,0,150).'[...]'; ?></p>
-							<a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>" class="tbutton small"><span>Leer más<i class="mii icon-angle-right"></i></span></a>
-						</div><!-- content two third -->
-					</div><!-- post video -->
-					<?php }
-					} //foreach de post
-					?>
-
-					<!--
-					<div class="pagination-tt clearfix">
-						<ul>
-							<li><span>1</span></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><span>...</span></li>
-							<li><a href="#">27</a></li>
-						</ul>
-						<span class="pages">Page 1 of 27</span>
-					</div> -->
-					<!-- pagination -->
 				</div><!-- grid 8 posts -->
 
 				<div class="grid_4 sidebar">

@@ -24,13 +24,27 @@
 		<!-- inicia Contenido -->
 		<div class="page-content">
         
-	        <?php include('include/matrix2.php'); ?>
-			<!-- End Revolution Slider -->
-        	
+	        <!-- breadcrums -->
+	        <div class="breadcrumb-place">
+				<div class="row clearfix">
+					<h3 class="page-title"> Intervenciones </h3>
+					<div class="breadcrumbIn">
+						<span> Tu estas aquí </span>
+						<ul>
+							<li><a href="index.html" title="Homepage"> <i class="icon-home"></i> </a></li>
+							<li><a href="blog-right-sidebar.html" title="Blog"> Intervenciones </a></li>
+							
+						</ul>
+					</div><!-- breadcrumbIn -->
+				</div><!-- row -->
+			</div>
+	        <!-- termina breadcums -->
+        	<br>
+        	<br>
 			<div class="row clearfix mbs">
 
 				<div class="grid_8 posts s-thumbnails">
-					<h3 class="col-title"> Ultimas noticias </h3>
+					<h3 class="col-title"> Intervenciones en tribuna </h3>
 					<br>
 
 				

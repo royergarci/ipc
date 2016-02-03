@@ -1,8 +1,8 @@
 <div class="row mbs clearfix">
    
             <div class="grid_31">
-            <img src="images/se/grid/arriba_izquierda_se.jpg" style="margin-bottom: 2px;"/>
-            <img src="images/se/grid/abajo_izquierda_se.jpg"/>
+            <img src="<?php echo base_url();?>images/se/grid/arriba_izquierda_se.jpg" style="margin-bottom: 2px;"/>
+            <img src="<?php echo base_url();?>images/se/grid/abajo_izquierda_se.jpg"/>
             </div>
             
             <div class="grid_61">
@@ -10,7 +10,7 @@
 						<div class="revolution">
 							<ul>
 										<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-							<img src="images/se/grid/soto_informe_750_1.jpg"  alt="bg5" >
+							<img src="<?php echo base_url();?>images/se/grid/soto_informe_750_1.jpg"  alt="bg5" >
 															
 					<div class="tp-caption big_white sfl"  
 						 data-x="40" 
@@ -35,7 +35,7 @@
 													</li>
 	
 										<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-							<img src="images/se/grid/soto_informe_750_1.jpg"  alt="bg5" >
+							<img src="<?php echo base_url();?>images/se/grid/soto_informe_750_1.jpg"  alt="bg5" >
 															
 					
 													</li>
@@ -44,12 +44,12 @@
 							<div class="tp-bannertimer"></div><!-- Timer -->										
 						</div>					
 					</div>
-                     <img src="images/se/grid/abajo_centro_se.jpg"/>
+                     <img src="<?php echo base_url();?>images/se/grid/abajo_centro_se.jpg"/>
         </div>
             
             <div class="grid_31">
-            <img src="images/se/grid/arriba_derecha_se.jpg" style="margin-bottom: 2px;"/>
-            <img src="images/se/grid/abajo_derecha_se.jpg"/>
+            <img src="<?php echo base_url();?>images/se/grid/arriba_derecha_se.jpg" style="margin-bottom: 2px;"/>
+            <img src="<?php echo base_url();?>images/se/grid/abajo_derecha_se.jpg"/>
             </div>
         
         

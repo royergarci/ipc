@@ -6,7 +6,9 @@ use Parse\ParseUser;
 use Parse\ParseQuery;
 ParseClient::initialize('w7EDsYMLcQd3WbgsTaWHpQYFhij5N8mcxoKEBAIh', 'MzlLQpI8mRyhR9Vtv2CU7LGbHa9GdpKwhc571Iam', '2EC4tO8Gqo6XLHdE1MquGPTEei5A3hxs4xBhnPEF');
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Post extends CI_Controller {
+
+class Intervenciones extends CI_Controller {
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,50 +22,31 @@ class Post extends CI_Controller {
 	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
 	{
-		//$this->load->view('welcome_message');
-		$this->load->helper('form');
-	}
-	public function getPost($id){
-		$query = new ParseQuery("noticias");
+			$results = $this->traerNoticias();
+			//var_dump($results[0]);
+			//$posts = $this->arrayToObject($results);
+			$data['posts'] = $results;
 
-		$query->equalTo("objectId", $id);
-		$post = $query->find();
-		
-		$data['post'] = $post[0];
-
-		$results = $this->traerCategorias();
+			$results = $this->traerCategorias();
 			$categorias = $this->arrayToObject($results);
 
 			$data['categorias'] = $categorias;
-		
-		$this->load->view('post', $data);
-	}
-	public function array_to_obj($array, &$obj)
-	 {
-	    foreach ($array as $key => $value)
-	    {
-	      if (is_array($value))
-	      {
-	      $obj->$key = new stdClass();
-	      $this->array_to_obj($value, $obj->$key);
-	      }
-	      else
-	      {
-	        $obj->$key = $value;
-	      }
-	    }
-	  return $obj;
-	  }
 
-	public function arrayToObject($array)
-	{
-	 $object= new stdClass();
-	 return $this->array_to_obj($array,$object);
+			$this->load->view('intervenciones', $data);
 	}
+	public function traerNoticias(){
+			$query = new ParseQuery("noticias");
+			$query->equalTo("categorias","intervencion");
+			$query->descending("fecha");
+			$results = $query->find();
+
+			return $results;
+	}
+
 	public function traerCategorias(){
 		  //$categorias = new stdClass();
 		  $query = new ParseQuery("noticias");
@@ -96,5 +79,26 @@ class Post extends CI_Controller {
 		  return $categorias;
 
 	}
+	public function array_to_obj($array, &$obj)
+	 {
+	    foreach ($array as $key => $value)
+	    {
+	      if (is_array($value))
+	      {
+	      $obj->$key = new stdClass();
+	      $this->array_to_obj($value, $obj->$key);
+	      }
+	      else
+	      {
+	        $obj->$key = $value;
+	      }
+	    }
+	  return $obj;
+	  }
+
+	public function arrayToObject($array)
+	{
+	 $object= new stdClass();
+	 return $this->array_to_obj($array,$object);
+	}
 }
-?>
