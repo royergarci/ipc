@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Mexico_City');
 require './vendor/autoload.php';
 use Parse\ParseClient;
 use Parse\ParseObject;
@@ -17,7 +18,7 @@ class Ambiente extends CI_Model {
         $this->ambiente = "parse";
     }
     
-    function getAmbiente()
+    public function getAmbiente()
     {
         return $this->ambiente;
     }
