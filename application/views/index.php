@@ -36,8 +36,10 @@
 				
 					<?php 
 					foreach ($posts as $post) {
+
+					  if ($enviroment == "parse"){
 						if (!in_array("video", $post->categorias)){
-							echo $post->objectId;
+							//echo $post->objectId;
 						?>
 							<div class="post clearfix">
 								<a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>" class="thumb-small fll"><img src="<?php echo $post->path_image; ?>" alt="#"></a>
@@ -73,6 +75,28 @@
 						</div><!-- content two third -->
 					</div><!-- post video -->
 					<?php }
+					  } // if enviroment
+					  else
+					  {
+					  	//local
+					  ?>
+					  	<div class="post clearfix">
+								<a href="<?php echo base_url().'index.php/post/getPost/'.$post->objectId; ?>" class="thumb-small fll"><img src="<?php echo $post->path_image; ?>" alt="#"></a>
+								<div class="content-two-third">
+									<div class="meta-box">
+										<h3> <a href="<?php echo base_url().'index.php/post/getPost/'; ?>"><?php echo $post->titulo; ?></a> </h3>
+										<div class="meta-more">
+											<span><i class="icon-user"></i> <a href="#"><?php echo $post->autor; ?></a></span>
+											<span><i class="icon-time"></i> <a href="#"><?php echo $post->fecha_str; ?></a></span>
+											
+										</div><!-- meta more -->
+									</div><!-- meta box -->
+									<p><?php echo substr($post->texto,0,150).'[...]'; ?></p>
+								<a href="<?php echo base_url().'index.php/post/getPost/'; ?>" class="tbutton small"><span>Leer Mas<i class="mii icon-angle-right"></i></span></a>
+								</div><!-- content two third -->
+							</div><!-- post image -->
+				 <?php
+					  }
 					} //foreach de post
 					?>
 

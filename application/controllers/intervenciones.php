@@ -24,6 +24,7 @@ class Intervenciones extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public $enviroment = "local";
 	public function index()
 	{
 			$results = $this->traerNoticias();
@@ -36,9 +37,10 @@ class Intervenciones extends CI_Controller {
 
 			$data['categorias'] = $categorias;
 
+			$data['enviroment'] = $this->enviroment;
 			$this->load->view('intervenciones', $data);
 	}
-	public function traerNoticias(){
+/*	public function traerNoticias(){
 			$query = new ParseQuery("noticias");
 			$query->equalTo("categorias","intervencion");
 			$query->descending("fecha");
@@ -46,7 +48,14 @@ class Intervenciones extends CI_Controller {
 
 			return $results;
 	}
+	public function traerNoiciasJson(){
+			$query = new ParseQuery("noticias");
+			$query->equalTo("categorias","intervencion");
+			$query->descending("fecha");
+			$results = $query->find();
 
+			return $results;
+	}
 	public function traerCategorias(){
 		  //$categorias = new stdClass();
 		  $query = new ParseQuery("noticias");
@@ -100,5 +109,5 @@ class Intervenciones extends CI_Controller {
 	{
 	 $object= new stdClass();
 	 return $this->array_to_obj($array,$object);
-	}
+	}*/
 }
