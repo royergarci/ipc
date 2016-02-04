@@ -45,7 +45,12 @@
 
 				<div class="grid_8 posts">
 					<div class="post">
-						<div class="thumb-big"><img src="<?php echo $post->path_image; ?>" alt="#"></div>
+					<?php
+						if (in_array("video", $post->categorias))
+							echo '<div class="iframe-thumb"><iframe src="'.$post->video_path.'" width="100%" height="380"></iframe></div>';
+						else 
+							echo '<div class="thumb-big"><img src="'.$post->path_image.'" alt="#"></div>';
+					?>
 						<div class="meta-box">
 						
 							<h3> <?php echo $post->titulo; ?></h3>
@@ -99,19 +104,7 @@
 
 <div id="toTop"><i class="icon-angle-up"></i></div><!-- Back to top -->
 <!-- Scripts -->
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/rs-plugin/pluginsources/jquery.themepunch.plugins.min.js"></script>	
-	<script type="text/javascript" src="<?php echo base_url();?>js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/theme20.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.flexslider-min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.knob.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.nicescroll.min.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/gmap3.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/twitter/jquery.tweet.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/custom.js"></script>
+	<?php include('include/scripts.php'); ?>
 	<script type="text/javascript">	
 	/* <![CDATA[ */
 		var tpj=jQuery;

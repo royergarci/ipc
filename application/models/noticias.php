@@ -59,6 +59,14 @@ class Noticias extends CI_Model {
 
             return $results;
     }
+    public function traerNoticiasSeccion($seccion){
+            $query = new ParseQuery("noticias");
+            $query->descending("fecha");
+            $query->equalTo("seccion",$seccion);
+            $results = $query->find();
+
+            return $results;
+    }
     public function traerNoticiasJson(){
             $results = '{
     "results": [

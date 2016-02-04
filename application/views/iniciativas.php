@@ -20,25 +20,38 @@
         <?php include('include/header.php'); ?>
 		<!-- end header -->
 		
-		<?php include('include/slider.php'); ?>
+		
 		<!-- inicia Contenido -->
 		<div class="page-content">
         
-			<!-- End Revolution Slider -->
-        	
+	        <!-- breadcrums -->
+	        <div class="breadcrumb-place">
+				<div class="row clearfix">
+					<h3 class="page-title"> Iniciativas </h3>
+					<div class="breadcrumbIn">
+						<span> Tu estas aquí </span>
+						<ul>
+							<li><a href="index.html" title="Homepage"> <i class="icon-home"></i> </a></li>
+							<li><a href="blog-right-sidebar.html" title="Blog"> Iniciativas </a></li>
+							
+						</ul>
+					</div><!-- breadcrumbIn -->
+				</div><!-- row -->
+			</div>
+	        <!-- termina breadcums -->
+        	<br>
+        	<br>
 			<div class="row clearfix mbs">
 
 				<div class="grid_8 posts s-thumbnails">
-					<h3 class="col-title"> Ultimas noticias </h3>
+					<h3 class="col-title"> Iniciativas </h3>
 					<br>
 
 				
 					<?php 
 					foreach ($posts as $post) {
-
-					  if ($enviroment == "parse"){
 						if (!in_array("video", $post->categorias)){
-							//echo $post->objectId;
+							echo $post->objectId;
 						?>
 							<div class="post clearfix">
 								<a href="<?php echo base_url().'index.php/post/getPost/'.$post->getObjectId(); ?>" class="thumb-small fll"><img src="<?php echo $post->path_image; ?>" alt="#"></a>
@@ -74,28 +87,6 @@
 						</div><!-- content two third -->
 					</div><!-- post video -->
 					<?php }
-					  } // if enviroment
-					  else
-					  {
-					  	//local
-					  ?>
-					  	<div class="post clearfix">
-								<a href="<?php echo base_url().'index.php/post/getPost/'.$post->objectId; ?>" class="thumb-small fll"><img src="<?php echo $post->path_image; ?>" alt="#"></a>
-								<div class="content-two-third">
-									<div class="meta-box">
-										<h3> <a href="<?php echo base_url().'index.php/post/getPost/'; ?>"><?php echo $post->titulo; ?></a> </h3>
-										<div class="meta-more">
-											<span><i class="icon-user"></i> <a href="#"><?php echo $post->autor; ?></a></span>
-											<span><i class="icon-time"></i> <a href="#"><?php echo $post->fecha_str; ?></a></span>
-											
-										</div><!-- meta more -->
-									</div><!-- meta box -->
-									<p><?php echo substr($post->texto,0,150).'[...]'; ?></p>
-								<a href="<?php echo base_url().'index.php/post/getPost/'; ?>" class="tbutton small"><span>Leer Mas<i class="mii icon-angle-right"></i></span></a>
-								</div><!-- content two third -->
-							</div><!-- post image -->
-				 <?php
-					  }
 					} //foreach de post
 					?>
 

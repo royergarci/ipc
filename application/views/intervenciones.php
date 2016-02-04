@@ -138,19 +138,7 @@
 
 <div id="toTop"><i class="icon-angle-up"></i></div><!-- Back to top -->
 <!-- Scripts -->
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/rs-plugin/pluginsources/jquery.themepunch.plugins.min.js"></script>	
-	<script type="text/javascript" src="<?php echo base_url();?>js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/theme20.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.flexslider-min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.knob.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.nicescroll.min.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/gmap3.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/twitter/jquery.tweet.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/custom.js"></script>
+	<?php include('include/scripts.php'); ?>
 	<script type="text/javascript">	
 	/* <![CDATA[ */
 		var tpj=jQuery;

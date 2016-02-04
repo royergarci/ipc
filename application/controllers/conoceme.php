@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Post extends CI_Controller {
+class Conoceme extends CI_Controller {
 	/**
 	 * Index Page for this controller.
 	 *
@@ -17,7 +17,7 @@ class Post extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	function __construct()
+	 function __construct()
     {
         // Call the Model constructor
         parent::__construct();
@@ -31,14 +31,11 @@ class Post extends CI_Controller {
     }
 	public function index()
 	{
-		//$this->load->view('welcome_message');
+		$this->load->view('conoceme');
 		
 	}
+	/*
 	public function getPost($id){
-		/*$query = new ParseQuery("noticias");
-
-		$query->equalTo("objectId", $id);
-		$post = $query->find();*/
 		if ($this->ambiente->getAmbiente()== "parse"){
 		
 			$data['post'] = $this->noticias->traerNoticiaId($id);
@@ -58,7 +55,7 @@ class Post extends CI_Controller {
 		}
 		
 		$this->load->view('post', $data);
-	}
+	}*/
 	
 }
 ?>

@@ -30,19 +30,31 @@ class Welcome extends CI_Controller {
 
 			//echo $this->ambiente->getAmbiente();
 			//$results = $this->traerNoticias();
-			$results = $this->noticias->traerNoticiasJson();
 
-			$data['posts'] = $results;
+			if ($this->ambiente->getAmbiente() == "local"){
+				$results = $this->noticias->traerNoticiasJson();
 
-			//$results = $this->traerCategorias();
-			$results = $this->categorias->traerCategoriasJson();
+				$data['posts'] = $results;
 
-			$categorias = $this->utilerias->arrayToObject($results);
+				//$results = $this->traerCategorias();
+				$results = $this->categorias->traerCategoriasJson();
 
-			foreach ($categorias as $cat){
-				//echo $cat->nombre;
+				$categorias = $this->utilerias->arrayToObject($results);
+
+				foreach ($categorias as $cat){
+					//echo $cat->nombre;
+				}
+				$data['categorias'] = $categorias;
 			}
-			$data['categorias'] = $categorias;
+			else{
+				$results = $this->noticias->traerNoticiasSeccion('index');
+				$data['posts'] = $results;
+
+				$results = $this->categorias->traerCategorias();
+				$categorias = $this->utilerias->arrayToObject($results);
+
+				$data['categorias'] = $categorias;
+			}
 
 			$data['enviroment'] = $this->ambiente->getAmbiente();
 			$this->load->view('index', $data);

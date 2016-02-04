@@ -1,12 +1,12 @@
-<div class="sliderr">
+<div class="slider">
 				<div class="fullwidthbanner-container">					
 					<div class="revolution">
 						<ul>
 
-									<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-						<img src="banners/camara_diputados_edo_mex_1440x440.jpg"  alt="bg7" >
+						<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+						<img src="<?php echo base_url(); ?>images/slides/slide1_ipc.jpg"  alt="bg7" >
 														
-				<div class="tp-caption fade"  
+				<!--<div class="tp-caption fade"  
 					 data-x="398" 
 					 data-y="-26" 
 					 data-speed="500" 
@@ -39,15 +39,15 @@
 					 data-y="195" 
 					 data-speed="500" 
 					 data-start="2200" 
-					 data-easing="easeInOutExpo"  >Desarmando la violencia</div>
+					 data-easing="easeInOutExpo"  >Desarmando la violencia</div>-->
 								
 				
-												</li>
+				</li>
 
-									<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-						<img src="banners/soto_espino_tribuna_1440X440.jpg"  alt="bg5" >
+				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+						<img src="<?php echo base_url(); ?>images/slides/slide1_ipc.jpg"  alt="bg5" >
 														
-				<div class="tp-caption big_white sfl"  
+				<!--<div class="tp-caption big_white sfl"  
 					 data-x="40" 
 					 data-y="180" 
 					 data-speed="400" 
@@ -66,8 +66,8 @@
 					 data-y="260" 
 					 data-speed="400" 
 					 data-start="1600" 
-					 data-easing="easeInOutExpo"  >Nezahualcoyotl 2013</div>
-												</li>
+					 data-easing="easeInOutExpo"  >Nezahualcoyotl 2013</div>-->
+				</li>
 
 								
 
@@ -79,3 +79,5 @@
 					</div>					
 				</div>
 			</div>
+			<br>
+			<br>

@@ -25,19 +25,32 @@ class Intervenciones extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public $enviroment = "local";
+
+	public function __construct()
+    {
+        // Call the Model constructor
+        parent::__construct();
+        $this->load->library('utilerias');
+        $this->load->helper('form');
+		
+		$this->load->model('ambiente');
+		$this->load->model('categorias');
+		$this->load->model('noticias');
+
+    }
 	public function index()
 	{
-			$results = $this->traerNoticias();
+			$results = $this->noticias->traerNoticiasSeccion('intervenciones');
 			//var_dump($results[0]);
 			//$posts = $this->arrayToObject($results);
 			$data['posts'] = $results;
 
-			$results = $this->traerCategorias();
-			$categorias = $this->arrayToObject($results);
+			$results = $this->categorias->traerCategorias();
+			$categorias = $this->utilerias->arrayToObject($results);
 
 			$data['categorias'] = $categorias;
 
-			$data['enviroment'] = $this->enviroment;
+			$data['enviroment'] = $this->ambiente->getAmbiente();
 			$this->load->view('intervenciones', $data);
 	}
 /*	public function traerNoticias(){

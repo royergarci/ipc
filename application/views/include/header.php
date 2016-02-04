@@ -3,7 +3,7 @@
 				<div class="row clearfix">
 					<div class="extra-content">
 						<div class="grid_8">
-							<img src="images/se/logo_sotoEspino_final.gif" width="300" height="612" alt="soto_espino_logo"> 
+							<img src="<?php echo base_url();?>images/conoceme.jpg" width="500" height="612" alt="soto_espino_logo"> 
                         </div><!-- grid 8 -->
 
 						<div class="grid_4">
@@ -22,7 +22,7 @@
 						</div><!-- grid 4 -->
 					</div><!-- extra content -->
 
-					<div class="arrow-down"><i class="icon-angle-down"></i></div><!-- arrow down -->
+					<div class="arrow-down" id="arrow"><i class="icon-angle-down" id="angle"></i></div><!-- arrow down -->
 				</div><!-- end row -->
 			</div>	<!-- end extrabox -->
 
