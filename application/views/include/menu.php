@@ -14,7 +14,7 @@
 							<li><a href="#">Prensa</a>
 								
 							</li>
-							<li><a href="#">Fotos y videos</a>
+							<li><a href="<?php echo base_url();?>index.php/fotos">Fotos</a>
 								
 							</li>
 							

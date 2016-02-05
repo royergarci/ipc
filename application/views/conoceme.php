@@ -23,7 +23,21 @@
 		
 		<!-- inicia Contenido -->
 		<div class="page-content">
-        
+            <!-- breadcrums -->
+	        <div class="breadcrumb-place">
+				<div class="row clearfix">
+					<h3 class="page-title"> Conoceme </h3>
+					<div class="breadcrumbIn">
+						<span> Tu estas aquí </span>
+						<ul>
+							<li><a href="index.html" title="Homepage"> <i class="icon-home"></i> </a></li>
+							<li><a href="blog-right-sidebar.html" title="Blog"> Conoceme </a></li>
+							
+						</ul>
+					</div><!-- breadcrumbIn -->
+				</div><!-- row -->
+			</div>
+	        <!-- termina breadcums -->
 	       <!-- contenido -->
 	       <div class="row clearfix mbs">
 	       		<br>

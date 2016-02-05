@@ -32,6 +32,7 @@
 	.metro-grid li img{height:100%;}
 	
 	.fullwidthbanner-container{ height:374px;}
+
 }
 
 /* #Tablet (Portrait)
@@ -260,6 +261,10 @@
 	padding:0;		
 	/*max-height:410px !important;*/
 	overflow:hidden;
-	/*height:210px;*/
+	height:210px;
 	} 
+	#img_arribaIzquierda{display:none;}
+	#img_abajoIzquierda{display:none;}
+	#img_arribaDerecha{display:none;}
+	#img_abajoDerecha{display:none;}
 }

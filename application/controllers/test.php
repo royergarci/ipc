@@ -32,6 +32,8 @@ class Test extends CI_Controller {
 		
 	}
 	
-	
+	public function flirck(){
+		$this->load->view('example');
+	}
 }
 ?>

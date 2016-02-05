@@ -1,8 +1,8 @@
 <div class="row mbs clearfix">
    
             <div class="grid_31">
-            <img src="<?php echo base_url();?>images/se/grid/arriba_izquierda_se.jpg" style="margin-bottom: 2px;"/>
-            <img src="<?php echo base_url();?>images/se/grid/abajo_izquierda_se.jpg"/>
+            <img id="img_arribaIzquierda" src="<?php echo base_url();?>images/se/grid/arriba_izquierda_se.jpg" style="margin-bottom: 2px;"/>
+            <img id="img_abajoIzquierda" src="<?php echo base_url();?>images/se/grid/abajo_izquierda_se.jpg"/>
             </div>
             
             <div class="grid_61">
@@ -29,8 +29,8 @@
         </div>
             
             <div class="grid_31">
-            <img src="<?php echo base_url();?>images/se/grid/arriba_derecha_se.jpg" style="margin-bottom: 2px;"/>
-            <img src="<?php echo base_url();?>images/se/grid/abajo_derecha_se.jpg"/>
+            <img id="img_arribaDerecha" src="<?php echo base_url();?>images/se/grid/arriba_derecha_se.jpg" style="margin-bottom: 2px;"/>
+            <img id="img_abajoDerecha" src="<?php echo base_url();?>images/se/grid/abajo_derecha_se.jpg"/>
             </div>
         
         
