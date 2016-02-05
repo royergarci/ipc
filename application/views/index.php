@@ -20,7 +20,7 @@
         <?php include('include/header.php'); ?>
 		<!-- end header -->
 		
-		<?php include('include/matrix2.php'); ?>
+		<?php include('include/slider.php'); ?>
 		<!-- inicia Contenido -->
 		<div class="page-content">
         

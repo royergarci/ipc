@@ -31,7 +31,7 @@
 	.metro-grid li .principal{width:100%;} 
 	.metro-grid li img{height:100%;}
 	
-	.fullwidthbanner-container{ height:374px;}
+	/*.fullwidthbanner-container{ height:374px;}*/
 
 }
 
@@ -113,7 +113,7 @@
 	.metro-grid li .principal{width:100%;}
 	.metro-grid li img{height:100%;}
 	
-	.fullwidthbanner-container{ height:301px;}
+	/*.fullwidthbanner-container{ height:301px;}*/
 }
 
 /* #Mobile (Landscape)
@@ -261,7 +261,7 @@
 	padding:0;		
 	/*max-height:410px !important;*/
 	overflow:hidden;
-	height:210px;
+	/*height:210px;*/
 	} 
 	#img_arribaIzquierda{display:none;}
 	#img_abajoIzquierda{display:none;}
