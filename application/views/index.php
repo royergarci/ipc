@@ -8,7 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<!-- Seo Meta -->
-		<meta name="description" content="Isidro Pedraza Chavez juntos y de frente por Hidalgo">
+		<meta name="description" content="Isidro Pedraza Chavez juntos y de frente por Hidalgo - noticias, intervenciones, iniciativas de ley, fotos y videos. Campaña politica y gestion legislativa. ">
 		<meta name="keywords" content="Isidro Pedraza, Chavez, Hidalgo, Gobiernador Hidalgo, Gobierno de Hidalgo">
 
 	<?php include('include/files.php');?>
