@@ -19,18 +19,17 @@ class Fotos extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	var $f;
+	
 	public function __construct()
     {
         // Call the Model constructor
         parent::__construct();
-        $this->f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.
+        $f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.
 
     }
 	public function index()
 	{
 		$data['photos'] = $this->getFotos();
-		$data['f'] = $this->f;
 		$this->load->view('fotos',$data);
 	}
 	public function getFotos(){

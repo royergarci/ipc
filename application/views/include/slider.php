@@ -45,7 +45,31 @@
 				</li>
 
 				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-						<img src="<?php echo base_url(); ?>images/slides/slide1_ipc.jpg"  alt="bg5" >
+						<img src="<?php echo base_url(); ?>images/slides/slide2_ipc.jpg"  alt="bg5" >
+														
+				<!--<div class="tp-caption big_white sfl"  
+					 data-x="40" 
+					 data-y="180" 
+					 data-speed="400" 
+					 data-start="1000" 
+					 data-easing="easeInOutExpo"  >Proximamente</div>
+								
+				<div class="tp-caption big_white sfr"  
+					 data-x="40" 
+					 data-y="220" 
+					 data-speed="400" 
+					 data-start="1300" 
+					 data-easing="easeInOutExpo"  > 1er Informe de Gobierno</div>
+								
+				<div class="tp-caption big_white randomrotate"  
+					 data-x="40" 
+					 data-y="260" 
+					 data-speed="400" 
+					 data-start="1600" 
+					 data-easing="easeInOutExpo"  >Nezahualcoyotl 2013</div>-->
+				</li>
+				<li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+						<img src="<?php echo base_url(); ?>images/slides/slide3_ipc.jpg"  alt="bg5" >
 														
 				<!--<div class="tp-caption big_white sfl"  
 					 data-x="40" 

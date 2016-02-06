@@ -16,20 +16,7 @@
 require_once("vendor/phpFlickr.php");
 $f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c");
 
-/*$recent = $f->photos_getRecent();
 
-//print_r($recent);
-
-foreach ($recent['photos'] as $photo) {
-	print_r($photo[0]);
-    $owner = $f->people_getInfo($photo[0]['owner']);
-    echo "<a href='http://www.flickr.com/photos/" . $photo[0]['owner'] . "/" . $photo[0]['id'] . "/'>";
-    echo $photo[0]['title'];
-    echo "</a> Owner: ";
-    echo "<a href='http://www.flickr.com/people/" . $photo[0]['owner'] . "/'>";
-    echo $owner[0]['username'];
-    echo "</a><br>";
-}*/
 //$f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.com/services/api/keys/
   $nsid = "139950084@N02"; //NSID Usuario, conseguir en: http://idgettr.com/
   //Incluir tag, ordenamieno, privacidad, y numero de imagenes a mostrar
