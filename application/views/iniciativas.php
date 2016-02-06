@@ -14,6 +14,7 @@
 	<?php include('include/files.php');?>
 </head>
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<div id="frame_">
 	<div id="layout" class="full">
     	<!-- inicia header -->
