@@ -4,7 +4,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gte IE 10)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><!--<![endif]-->
 <head>
-	<title>Isidro Pedraza Chavez - Juntos y de Frente por Hidalgo</title>
+	<title>Isidro Pedraza Chavez - Iniciativas y noticias</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<!-- Seo Meta -->
@@ -14,7 +14,7 @@
 	<?php include('include/files.php');?>
 </head>
 <body>
-	<?php include_once("analyticstracking.php") ?>
+	<?php include_once("include/analyticstracking.php") ?>
 	<div id="frame_">
 	<div id="layout" class="full">
     	<!-- inicia header -->
@@ -160,6 +160,9 @@
 				navOffsetVertical:20,
 				shadow:0
 			});
+
+			tpj('.sf-menu').find('li').removeClass('current');
+			tpj('.sf-menu').find('li').eq(2).addClass('current');
 		});
 	/* ]]> */
 	</script>

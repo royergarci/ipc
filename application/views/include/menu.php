@@ -2,7 +2,7 @@
 						<ul class="sf-menu">
 							<li class="current selectedLava"><a href="<?php echo base_url();?>">Inicio</a>
 							</li>
-							<li><a href="<?php echo base_url();?>index.php/conoceme">Conóceme</a>
+							<li class=""><a href="<?php echo base_url();?>index.php/conoceme">Conóceme</a>
 								
 							</li>
 							<li><a href="#">Legislativo</a>
