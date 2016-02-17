@@ -64,47 +64,55 @@
 									//$f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.com/services/api/keys/
 									  $nsid = "139950084@N02"; //NSID Usuario, conseguir en: http://idgettr.com/
 									  //Incluir tag, ordenamieno, privacidad, y numero de imagenes a mostrar
-									  $photos = $f->photos_search(array("tags"=>"", "user_id"=>$nsid, "sort"=>"date-posted-desc", "privacy_filter"=>"1", "per_page"=>"20"));
-									  $url    = "http://www.flickr.com/photos/".$nsid."/"; //Url de la Imgen Original
-									  if (is_array($photos['photo'])) 
-									  {
-										foreach ($photos['photo'] as $photo) 
-										{
-											//$f->photos->getSizes();
 
-										  	//$salida = "<div class='caja'>";
-										  	//$salida .= "<a href='".$url.$photo['id']."'><img alt='".$photo['title']."' title='".$photo['title']."' "."src='".$f->buildPhotoURL($photo, "Medium 640")."' /></a>";
-									  	  	//echo $salida."</div>";
+									  $tagsList = $f->tags_getListUser($nsid);
+									
+									  foreach ($tagsList as $tagl){
+											//print_r($tagl);
+											  $photos = $f->photos_search(array("tags"=>$tagl['_content'], "user_id"=>$nsid, "sort"=>"date-posted-desc", "privacy_filter"=>"1", "per_page"=>"20"));
+											  $url    = "http://www.flickr.com/photos/".$nsid."/"; //Url de la Imgen Original
+											  if (is_array($photos['photo'])) 
+											  {
+											  	$i=0;
+												foreach ($photos['photo'] as $photo) 
+												{
+													//$f->photos->getSizes();
 
-											//Obtenemos los tags
+												  	//$salida = "<div class='caja'>";
+												  	//$salida .= "<a href='".$url.$photo['id']."'><img alt='".$photo['title']."' title='".$photo['title']."' "."src='".$f->buildPhotoURL($photo, "Medium 640")."' /></a>";
+											  	  	//echo $salida."</div>";
 
-											$tags = $f->tags_getListPhoto($photo['id']);
+													//Obtenemos los tags
 
-											$tagFoto = null;
-											foreach ($tags as $tag){
-												if (isset($tag))
-												 	$tagFoto = $tag['raw'];
-												else
-													$tagFoto = 'all';
-											}
+													$tags = $f->tags_getListPhoto($photo['id']);
 
+													$tagFoto = null;
+													foreach ($tags as $tag){
+														if (isset($tag))
+														 	$tagFoto = $tag['raw'];
+														else
+															$tagFoto = 'all';
+													}
 
-									  	  	$salida = '<li class="grid_3" data-id="id-1" data-type="'.$tagFoto.'">';
-											$salida .=	'<div class="hover-fx">';
-											$salida .=			'<img src="'.$f->buildPhotoURL($photo, "Medium 640").'" alt="#">';
-											$salida .=		'<a class="fLeft" href="'.$f->buildPhotoURL($photo, "Medium 640").'"><span><i class="icon-link"></i></span></a>';
-											$salida .=	'<a class="fRight" href="'.$f->buildPhotoURL($photo, "Medium 640").'" data-gal="lightbox[portfolio]"><span><i class="icon-eye-open"></i></span></a>';
-											$salida .= '</div>';
-											$salida .= '<div class="detailes">';
-											$salida .=			'<h5> <a href="#">'.$photo["title"].'</a> </h5>';
-											$salida .=			'<a href="#">Isidro Pedraza</a>, <a href="#">'.$tagFoto.'</a>';
-											$salida .=		'</div>';
-											$salida .=	'</li>';
+													if ($i==0)
+											  	  		$salida = '<li class="grid_3" data-id="id-'.$i++.'" data-type="'.$tagFoto.'">';
+											  	  	else
+											  	  		$salida = '<li class="grid_3" data-id="id-'.$i++.'" data-type="'.$tagFoto.'" style="display:none;">';
+													$salida .=	'<div class="hover-fx">';
+													$salida .=			'<img src="'.$f->buildPhotoURL($photo, "Medium 640").'" alt="#">';
+													$salida .=		'<a class="fLeft" href="'.$f->buildPhotoURL($photo, "Medium 640").'"><span><i class="icon-link"></i></span></a>';
+													$salida .=	'<a class="fRight" href="'.$f->buildPhotoURL($photo, "Medium 640").'" data-gal="lightbox['.$tagFoto.']"><span><i class="icon-eye-open"></i></span></a>';
+													$salida .= '</div>';
+													$salida .= '<div class="detailes">';
+													$salida .=			'<h5> <a href="#">'.$photo["title"].'</a> </h5>';
+													$salida .=			'<a href="#">Isidro Pedraza</a>, <a href="#">'.$tagFoto.'</a>';
+													$salida .=		'</div>';
+													$salida .=	'</li>';
 
-											echo $salida;
+													echo $salida;
+												}
+											  }
 										}
-									  }
-								
 										//$photo =array_pop($photo);
 									//	print_r($photo[0]['title']);
 										 //print_r ($photo);
