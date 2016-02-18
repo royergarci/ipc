@@ -19,17 +19,17 @@ class Fotos extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	
 	public function __construct()
     {
         // Call the Model constructor
         parent::__construct();
-        $f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.
+       // $f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.
 
     }
 	public function index()
 	{
 		$data['photos'] = $this->getFotos();
+		//print_r($data['photos']);
 		$this->load->view('fotos',$data);
 	}
 	public function getFotos(){
@@ -37,18 +37,30 @@ class Fotos extends CI_Controller {
 		  $f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c"); //Clase de Api, conseguir en: http://www.flickr.com/services/api/keys/
 		  $nsid = "139950084@N02"; //NSID Usuario, conseguir en: http://idgettr.com/
 		  //Incluir tag, ordenamieno, privacidad, y numero de imagenes a mostrar
-		  $photos = $f->photos_search(array("tags"=>"", "user_id"=>$nsid, "sort"=>"date-posted-desc", "privacy_filter"=>"1", "per_page"=>"20"));
 
+		  $tagsList = $f->tags_getListUser($nsid);
+		  $j = 0;
+		  foreach ($tagsList as $tagl){
+					
+					$photos = $f->photos_search(array("tags"=>$tagl['_content'], "user_id"=>$nsid, "sort"=>"date-posted-desc", "privacy_filter"=>"1"));
+					//$photoList[$tagl['_content']] = $photos['photo'];
+					$i = 0;
+					$photoList[$j]['tag'] = $tagl['_content'];
+					foreach ($photos['photo'] as $photo){
+							$photoList[$j]['photos'][$i]['id'] = $photo['id'];
+							$photoList[$j]['photos'][$i]['url'] = $f->buildPhotoURL($photo, "Medium 640");
+							$i++;
+					}
+					$j++;
+				/*	if (is_array($photos['photo'])){
+						$i = 0;
+						foreach ($photos['photo'] as $photo){
+								$photoList[$tagl['_content']][$i] = $f->buildPhotoURL($photo, "Medium 640");
+						}
+					}*/
+		 }
 
-			/*if (is_array($photos['photo'])) 
-			  {
-				foreach ($photos['photo'] as $photo) 
-				{
-				  $salida = "<div class='caja'>";
-				  $salida .= "<a href='".$url.$photo['id']."'><img alt='".$photo['title']."' title='".$photo['title']."' "."src='".$f->buildPhotoURL($photo, "square")."' /></a>";
-			  	  echo $salida."</div>";
-				}
-			  }*/
-		  return $photos;
+													
+		  return $photoList;
 	}
 }

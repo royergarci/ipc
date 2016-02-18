@@ -57,7 +57,32 @@
 				<div class="grid_12">
 							<ul class="portfolio clearfix">
 								<?php
-									require_once("vendor/phpFlickr.php");
+
+									foreach ($photos as $photo){
+										$tag = $photo['tag'];
+										$i=0;
+										foreach ($photo['photos'] as $p){
+											if ($i==0)
+											  	  		$salida = '<li class="grid_3" data-id="id-'.$i++.'" data-type="'.$tag.'">';
+											  	  	else
+											  	  		$salida = '<li class="grid_3" data-id="id-'.$i++.'" data-type="'.$tag.'" style="display:none;">';
+													$salida .=	'<div class="hover-fx">';
+													$salida .=			'<img src="'.$p['url'].'" alt="#">';
+													$salida .=		'<a class="fLeft" href="'.$p['url'].'"><span><i class="icon-link"></i></span></a>';
+													$salida .=	'<a class="fRight" href="'.$p['url'].'" data-gal="lightbox['.$tag.']"><span><i class="icon-eye-open"></i></span></a>';
+													$salida .= '</div>';
+													$salida .= '<div class="detailes">';
+													$salida .=			'<h5> <a href="#">'.$tag.'</a> </h5>';
+													$salida .=			'<a href="#">Isidro Pedraza</a>, <a href="#">'.$tag.'</a>';
+													$salida .=		'</div>';
+													$salida .=	'</li>';
+
+													echo $salida;
+													$i++;
+										}
+
+									}
+								/*	require_once("vendor/phpFlickr.php");
 									$f = new phpFlickr("f8dfa483443f9424a79d73c50344b90c");
 
 
@@ -69,7 +94,7 @@
 									
 									  foreach ($tagsList as $tagl){
 											//print_r($tagl);
-											  $photos = $f->photos_search(array("tags"=>$tagl['_content'], "user_id"=>$nsid, "sort"=>"date-posted-desc", "privacy_filter"=>"1", "per_page"=>"20"));
+											  $photos = $f->photos_search(array("tags"=>$tagl['_content'], "user_id"=>$nsid, "sort"=>"date-posted-desc", "privacy_filter"=>"1"));
 											  $url    = "http://www.flickr.com/photos/".$nsid."/"; //Url de la Imgen Original
 											  if (is_array($photos['photo'])) 
 											  {
@@ -116,25 +141,7 @@
 										//$photo =array_pop($photo);
 									//	print_r($photo[0]['title']);
 										 //print_r ($photo);
-										/*  $salida = "<div class='caja'>";
-										  $salida .= "<a href='".$url.$photo['id']."'><img alt='".$photo['title']."' title='".$photo['title']."' "."src='".$f->buildPhotoURL($photo, "square")."' /></a>";
-									  	  echo $salida."</div>";
-									  	 // echo $photo["title"];
-									  	 // echo $f->buildPhotoURL($photo, 'square');
-
-									  	$salida = '<li class="grid_3" data-id="id-1" data-type="3d">';
-										$salida .=	'<div class="hover-fx">';
-										$salida .=			'<img src="'.$f->buildPhotoURL($photo, 'square').'" alt="#">';
-										$salida .=		'<a class="fLeft" href="portfolio-single-wide-slider.html"><span><i class="icon-link"></i></span></a>';
-										$salida .=	'<a class="fRight" href="images/assets/portfolio-thumb1.jpg" data-gal="lightbox[portfolio]"><span><i class="icon-eye-open"></i></span></a>';
-										$salida .= '</div>';
-										$salida .= '<div class="detailes">';
-										$salida .=			'<h5> <a href="#">'.$photo["title"].'</a> </h5>';
-										$salida .=			'<a href="#">3D Model</a>, <a href="#">Photography</a>';
-										$salida .=		'</div>';
-										$salida .=	'</li>';
-
-										echo $salida;*/
+										*/
 									
 
 							?>
