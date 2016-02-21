@@ -78,7 +78,7 @@
 													$salida .=	'</li>';
 
 													echo $salida;
-													$i++;
+													
 										}
 
 									}
